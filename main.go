@@ -95,7 +95,7 @@ func getTocken(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(fmt.Sprintf("failed to retrive access token for edgex service due to error %s", err.Error()))
 			return
 		}
-		message.Result = fmt.Sprintf("the access token is %s", user, t)
+		message.Result = fmt.Sprintf(t)
 		json.NewEncoder(w).Encode(message)
 	} else {
 		message.Result = "failed get the tocken"
